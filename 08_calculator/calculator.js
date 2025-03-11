@@ -15,13 +15,7 @@ const multiply = function (arr) {
 };
 
 const power = function (a, b) {
-  let result = 1;
-
-  for (let i = 0; i < b; i++) {
-    result *= a;
-  }
-
-  return result;
+  return Math.pow(a, b);
 };
 
 const factorial = function (num) {
