@@ -4,6 +4,7 @@ const palindromes = function (string) {
     .replace(/[^a-z0-9]/g, '')
     .split('');
 
+  // Used spread to make string into array
   let reversed = [...stringArr].reverse();
 
   return stringArr.join('') === reversed.join('');
