@@ -1,15 +1,14 @@
-function findAge(born, death) {
+const findAge = function (born, death) {
   return !death ? new Date().getFullYear() - born : death - born;
-}
+};
 
 const findTheOldest = function (arr) {
-  let sorted = arr.sort(
-    (a, b) =>
-      findAge(b.yearOfBirth, b.yearOfDeath) -
-      findAge(a.yearOfBirth, a.yearOfDeath)
-  );
+  return arr.reduce((oldest, current) => {
+    let oldestAge = findAge(oldest.yearOfBirth, oldest.yearOfDeath);
+    let currentAge = findAge(current.yearOfBirth, current.yearOfDeath);
 
-  return sorted[0];
+    return oldestAge > currentAge ? oldest : current;
+  });
 };
 
 // Do not edit below this line
